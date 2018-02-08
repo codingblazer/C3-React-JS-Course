@@ -1,0 +1,25 @@
+yarn global add live-server
+=> we will need to see the html js output again and again 
+> we will use expres ffor our production, livescript while we are developing and webpack for localhost 
+
+Use live-server public for seeing the output of everything in public folder
+right now we are using script tag to insert react react dom redux but later we will use webpack for it which is easy
+react allows  us to create js code which creates components => components are the html codes 
+=> to render/insert this html to DOM, we use react-dom library
+
+create app.js which will create all the react or js code => and include this file in the html
+
+JSX is JS XML which is extension for JS just like we have SAAS as extension for CSS
+
+If we create a JSX code and try to render it inside html code like by inserting in div => it will show error 
+=> this is because, the JSX code is not understood by the browser => we use babel for that
+
+babel is a Javascript compiler. It helps us in many conversions -
+1) JSX to plain old js => like needed here
+2) ES6/ES7 to ES5 => ES6/6 comes with variety of new features like arrow function but these wont work on every browser because there are still some browser who dont support it yet and maybe never will 
+=> for browser compatibility, we must convert ES6/7 anywhere in our code to plain old js => i,e, we maybe wrting Es6 but it will convert to Es5 in the end => and we know it can run everywhere
+
+On babel website you can see conversion 
+React.createElemet (tag name, attribute array, content ) 
+
+=> but we want to automate this conversion and thus we will use babel library for that locally 
