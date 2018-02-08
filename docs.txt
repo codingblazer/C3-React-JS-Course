@@ -23,3 +23,5 @@ On babel website you can see conversion
 React.createElemet (tag name, attribute array, content ) 
 
 => but we want to automate this conversion and thus we will use babel library for that locally 
+=> replace jsx by its equivalent code for old js given by babel 
+and it works fine 
