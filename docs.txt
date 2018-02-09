@@ -25,3 +25,19 @@ React.createElemet (tag name, attribute array, content )
 => but we want to automate this conversion and thus we will use babel library for that locally 
 => replace jsx by its equivalent code for old js given by babel 
 and it works fine 
+
+now we will install the babel and some of its presets => we will install react preset, the env preset which helps in getting us all es6 and es7 features
+yarn global add babel-cli => comamnd line to access babel
+babel --help 
+
+Like in node, we used npm init for config of the project, here it is the yarn which does all that work like adding dependencies or init 
+=> yarn init before every project
+
+Now we will add the presets as dependency in package.json using the yarn module yarn add babel-preset-react
+
+Now lets create app.js in src folder => this is js file where we will write our JSX code => then using babel commanline we will convert this code into old javascript code by outputing it into scripts/app.js
+In commandline => babel src/app.js --out-file=public/scripts/app.js --presets=env,react
+
+If we use this with --watch => it will keep running in background and make changes as we make any changes
+
+We dont upload node modules on git or anything => to reinstall them on your machine, do yarm install just like we did npm install in node

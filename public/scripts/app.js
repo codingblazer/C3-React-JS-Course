@@ -1,10 +1,12 @@
+'use strict';
+
 console.log('App is running ');
 
 var template = React.createElement(
-    "p",
-    null,
-    "This is jsx from app.js"
-  );
+  'p',
+  null,
+  'This is some text'
+);
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template,appRoot);
+ReactDOM.render(template, appRoot);
