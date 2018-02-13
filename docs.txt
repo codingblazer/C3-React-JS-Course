@@ -41,3 +41,8 @@ In commandline => babel src/app.js --out-file=public/scripts/app.js --presets=en
 If we use this with --watch => it will keep running in background and make changes as we make any changes
 
 We dont upload node modules on git or anything => to reinstall them on your machine, do yarm install just like we did npm install in node
+
+Babel errors will appear in the terminal => when we give 2 root elements in JSX =>it throws error because JSX can have only one rrot element 
+
+Now we willl see how to create dynamic templates => uise {variable name} tp insert any js content into template
+ => dont't put object variable bcoz it wont know what to do with object 
