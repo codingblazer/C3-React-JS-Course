@@ -46,3 +46,11 @@ Babel errors will appear in the terminal => when we give 2 root elements in JSX 
 
 Now we willl see how to create dynamic templates => uise {variable name} tp insert any js content into template
  => dont't put object variable bcoz it wont know what to do with object 
+
+ Now we will see conditional jSX => if log in then render this else render that => this type of stuff 
+ => 1) we do it by making functions => we call function and it will contain conditions based on which it will return the var => we call this function inside {}
+ 2) Note that we can also do templating inside {} => actually, the function can return template as well based on condition like we have done 
+ 3) See that inside the function we are checking that if location exist then send template with dynamic location var inserted back to the caller which will again dynamically be rendered 
+Now if the location is undefined => no need to do else retunr... => this is becuase if not exist, function will auto return undefined 
+=> u will obeserve that in undefined case => it will become {undefined} at the caller side => in such a case i.e. {undefined} => nothing is rendered 
+=> VIMP => by doing this we were able to di this : if location exist, create <p> template containing location else if not, then do nothing..no <p> is created, no location added as if we never did anything there 
