@@ -54,3 +54,13 @@ Now we willl see how to create dynamic templates => uise {variable name} tp inse
 Now if the location is undefined => no need to do else retunr... => this is becuase if not exist, function will auto return undefined 
 => u will obeserve that in undefined case => it will become {undefined} at the caller side => in such a case i.e. {undefined} => nothing is rendered 
 => VIMP => by doing this we were able to di this : if location exist, create <p> template containing location else if not, then do nothing..no <p> is created, no location added as if we never did anything there 
+Test this by removing location or makingit undefined 
+
+Now let learn ternary operator which comes very handy many times
+=> Before this, note that {undefined} is not rendered in JSX => {true} or {false} or {null} will not be rendered too as they are undefined  => this is imp feature which makes things easier and neat
+Now ternary => {user.name ? user.name : 'ccecr'} => if user.name will exist, it is true else undefined will correspond to false 
+
+Next we will learn logical AND operator => these are little different than java => true && 'soem text' gives 'some text' => false && 'some text' gives false
+=> {user.age>=18 && (here put whatever you want to render if true)} => if not true, it will be false/undefined => nothign rendered like in earlier cases 
+
+=> 3 techniques => ternary, AND operator or simple if else by calling a function
