@@ -66,3 +66,22 @@ Next we will learn logical AND operator => these are little different than java 
 => 3 techniques => ternary, AND operator or simple if else by calling a function
 
 Now look at the playground/es6 for types of varibaled in es6 javascript
+Now lets look at the arrow function => in normal function, var f = function(a,b) you may call f(1,2,3) => you may pass no. of arguments not same as in signature BUT still inside function you can do log(arguments) to access all arguments BUT in arrow function,
+1) You can't access arguments and you must stricylt follow the signature while calling function otherwie it will throw error
+2) Arrow function uses "this" of their parent scope 
+=> 
+const user = {
+    name : 'Andrew',
+    cities: ['Delhi','Pune'],
+    printFunc : function(){
+        this.cities.forEach((city)=>{
+            console.log(this.name);
+        });
+    }
+}
+=> above inside forEach we have used arrow function => inside this function if you use "this" => what will be the scope that "this" will refer to ?? => It wont refer to scope inside of arrow function 
+=> in arrow function "this" referes to scope of parent "this" => parent of this arrow function is scope = inside of object 
+=> this inside arrow = this inside object scope => this referes to object 
+ 
+=> Had it been normal function => "this would have refreed to scope = scope inside function " => this.cities would have shown error because, there are no cities inside function scope (="this" scope)
+
