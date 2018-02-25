@@ -96,3 +96,21 @@ Now are making counter app using event handlers => we have created a template wi
 But if you see everytime we call this rendering func, it will recreate the same template and re render which will be overkill for big apps => but react handles it efficiently 
 =>  Some developer tools note : Open dev tools elements tab => click on button now and see the elements tab => it will flash everything that is re rendered by react 
 also you will see some comments realted to react which also helps 
+
+Now we will see how to create forms => simply add form in template => Now, since on submitting a form in browser, the page sends thr data in url we want to avoid this default behavior => add onSubmit inside your form and give the function where we will handle this case
+Now onSubmit={onFormSubmit} => dont make it {onFormSubmit()} because then you will be calling the function and it will return undefined => we dont want that 
+=> Now inside onFormSubmit function we will be receiing the event e argument by default => call prevent default
+We can get the form elements as e.target.elements => Now access element by its name => name = option for textfield => .option.value will give value by user in this element 
+=> Now push this element to the options array in app object and then clear the field so user can submit new entry in the form 
+Now though we have got array of all options in array But it is in js, not jsx => how to use it in jsx => 
+JSX supports js arrays, strings, numbers AND ignores objects, booleans, undefined, null  by using {put code here like we did variables}
+=> For array => again put array inside {} => Though null undefined etc can be used but they will be ignored in array
+=> { [1,2,3] } => actually it will be breaked down to individual jsx elements => {1},{2,{3}} i.e. as if we have defined multiple {number} jsx
+Array can contain the tags as well 
+[<p>A</p>,<p>B</p>]  
+=> though it will be rendered, we will have error in the consolde => actually JSX uses keys for optimisation processs => to keep track of these array jsx elements, a key has to be attached at the time of declaring them which will 
+be used by JSX for internal references and provide optimisation in renderign For ex => to know that this element is same as before and don;t need to be rendered again 
+=> If you give key=1 to <p> and then dynamically changes key to 2 => JSX will treat this element as new one and will create new instead of re rendering => however if key is same, it knows that it is same and it will only modify the changes
+
+Now we can execute some code inside { code here} which will return us any JSX expression 
+=>  we can use maps to iterate over options array and for each of them return li tag 
