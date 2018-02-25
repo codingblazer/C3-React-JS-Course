@@ -18,3 +18,4 @@ let fullna = 'sachin aggarwal';
 //const cannot be both redefined and reassigned 
 
 //we will be using let or const only in the projects as var is bad practice and redefinin can cause bugs 
+ 

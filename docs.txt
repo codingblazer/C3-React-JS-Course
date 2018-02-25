@@ -85,3 +85,14 @@ const user = {
  
 => Had it been normal function => "this would have refreed to scope = scope inside function " => this.cities would have shown error because, there are no cities inside function scope (="this" scope)
 
+In JSX , inside <button>, its not class. It is className
+Search react DOM on google for more such attributes in JSX corresponding to their HTML equivalent => all of them are camelcase
+
+You can also give value of id or class in JSX through a variable too like button id={var} or button onClick = {function_name}
+
+Now are making counter app using event handlers => we have created a template with button and text => added a count as a variable in it => inside onClick on +/-, we are first changing same count variable we put in template
+=> but we also need to render the new value => Now we have put template and render function inside some function => this will be called whenever we have to render things => it will be called first time for init and then just after count var value is changed
+
+But if you see everytime we call this rendering func, it will recreate the same template and re render which will be overkill for big apps => but react handles it efficiently 
+=>  Some developer tools note : Open dev tools elements tab => click on button now and see the elements tab => it will flash everything that is re rendered by react 
+also you will see some comments realted to react which also helps 
