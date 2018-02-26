@@ -146,3 +146,23 @@ Props of components
 
 => in code, we first created array of options and then sent it as prop to options compo and then inside it using map, for each of them, we created option component by sending data for each of them as popr to Option compnent 
 => the key is added since we are using jsx arrays
+
+the props allowed us to communicate in one direction only => to coomunicate in other, we use handlers/event handlers 
+=> within component, if inside render, you have button and its onClick => define its onclick handler within the same class 
+=> we have done this for a form inside addOption class component 
+
+Now lets see binding 
+=> when you call this.handleRemoveAll inside render() of component, it works or if you use this.props 
+but if inside the handleRemoveAll method of component class itself, if you use this.props () => will show error => why ?
+when you said onClick = handleRemoveAll, you didn't do function call like any java etc handleRemoveAll() => you just passed reference to the object 
+=> react just got referene to the function object..it doesn't know which scope this function was in => it dont know what "this" meant inside func => bcoz it just got the function 
+=> "this" inside handleRemoveAll refers to the window and not the current component object 
+=> since render() function is always associted with component class, react knew that "this" means the current object
+=> while passing function reference to react for onClick, we must also pass the scope "this" of this function => we must pass that which scope will be used for this function 
+=> you should do, onClick = this.handleRemoveAll.bind(scope you want which is nothing but current "this") 
+OR 
+=> you can also, use constructor to do so => the constructor always receieve a parameter props => inside constructor, first super the props as we dont want to mess with its internal functioning
+=> then you can call this.handleRemoveAll (means the class function) = this.handleRemoveAll.bind(this) (mean the class function along with scope specified to it)
+=> remember that like render(), inside constructor also, the "this" referes to object only 
+
+You should prefer 2nd one bcoz render is called again and again and doing same thing unneceesary is not good 
