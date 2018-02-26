@@ -114,3 +114,28 @@ be used by JSX for internal references and provide optimisation in renderign For
 
 Now we can execute some code inside { code here} which will return us any JSX expression 
 =>  we can use maps to iterate over options array and for each of them return li tag 
+
+Components => we can break our app inti small componenets => has its own JSX, events => reusable self contained units 
+on any page we can break the page into components => there will be one parent tag and all other componenets can be used by their name as if they are html tags => their implementation will be abstracted 
+
+ES6 classes => though we already studied about it in Node lectures => One of the ES6 feature is to have optional arguments -
+1) constructor(name = 'Anonymous'){   // => if name not passed, it is anonymous by default 
+    ....
+}
+2) constructor (name){
+this.name = name || 'test';   //=> if name not given, take value as test else as name 
+}
+
+If inheriting parent class => call its constructor before setting your values b super 
+
+
+Creating components
+
+1) Create a component => crete a class with camelcase name and it must extend the React.Component class 
+2) Override the render method in which define the jsx for your react component 
+3) Now you can use all the components you created above in your jsx code by treating component class as tags and render it by using ReactDom.render (jsx,where to insert)
+
+We can create our complete app as a  React component class => make Indecision app itself as component and then inside it use other components 
+=> it is like components inside components => another example is use of option component inside options class/component => it is nexting of components 
+=> whenever you need component inside component => use it inside code of parent render() function 
+
