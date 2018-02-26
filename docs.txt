@@ -166,3 +166,15 @@ OR
 => remember that like render(), inside constructor also, the "this" referes to object only 
 
 You should prefer 2nd one bcoz render is called again and again and doing same thing unneceesary is not good 
+
+Lets see how to setup state in react 
+=> 1) come up with defualt set of values => in counter app, it is 0 => if outside the react component => use var else if inside => use object => default state object
+=> 2) Component will be rendered with this default value => counter will be rendered on screen with intial val as 0
+=> 3)  change state based on some event like netwrok req or button click => +1 button increases count => chnage state
+=> 4) component is re rendered with the above changed state value
+=> the step 2 and 4 => automatically rendered with new state value => we dont have to do it manually 
+
+=> inside constructor when the component is created we gie its defualt value like given here 
+=> now, as the state changes => when event happens, we use this.setState function which automatically receives the states previous values as parameter in form of prevState
+=> Note that all the states are defined inside constructor woth their defaults 
+=> Now, inside setState function return a object containing all the states you want to change as key with their new values => Note that the states you are not returning for change will remain as it is 
