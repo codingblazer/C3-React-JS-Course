@@ -139,3 +139,10 @@ We can create our complete app as a  React component class => make Indecision ap
 => it is like components inside components => another example is use of option component inside options class/component => it is nexting of components 
 => whenever you need component inside component => use it inside code of parent render() function 
 
+Props of components 
+=> let say you have a component but you want to reuse it but with different data => props helps us 
+=> while using any component <Header/> we can send data with it in form of attribute => this attribute/data/prop will be accessible to us inside this component's class 
+=> this.props contain all the props that are sent to us and you can thus set that data to component 
+
+=> in code, we first created array of options and then sent it as prop to options compo and then inside it using map, for each of them, we created option component by sending data for each of them as popr to Option compnent 
+=> the key is added since we are using jsx arrays
