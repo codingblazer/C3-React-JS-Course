@@ -209,3 +209,14 @@ inside addOption of parent class, lets add the option => we could do prevState.o
 Add some error handling and validation inside the parent addOptions => if error => retuen the error back to the caller i.e. to the AddOption class bcoz error is specific to form and it should handle it 
 => on receiving the error, since it is also one kind of a state for the AddOptionc class, make state for error inside it 
 => use setState to return the rendering of error and add error inside div if render() function where it will show the error 
+
+
+Now we are going to learn about the stateless function components => they dont have state, they are functions(not classes) and they are components 
+=> we use both class based and these function based - when and why => if you see then some of the classes we made earlier didn't had any state i.e. they just had one render() function => we can say that it would be good to replace them by stateless function components 
+
+=> see the user function as ex of this => we can use arrow function and inside it, just like we used to do inside render(), we can return HTML type JSX code 
+=> Now to use this component, we can use like any class component only 
+=> Now to send props/attr => we can send them like before as attr inside this compnent tag 
+=> to receive these props, since we cant use " this" inside a function, we receive them as first parameter inside the function 
+
+Advantages of using these functions => faster since not a class extending React.Component, neat, easy testing 
