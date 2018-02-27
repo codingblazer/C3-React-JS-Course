@@ -178,3 +178,34 @@ Lets see how to setup state in react
 => now, as the state changes => when event happens, we use this.setState function which automatically receives the states previous values as parameter in form of prevState
 => Note that all the states are defined inside constructor woth their defaults 
 => Now, inside setState function return a object containing all the states you want to change as key with their new values => Note that the states you are not returning for change will remain as it is 
+
+Now lets work on indecision app => Till now we have only seen that props are sent from parent to child i.e. when using child as a tag inside parent, we give some attribute/prop value and that value is get inside the child class => from this.props which we receive there i.e. parent pass props to child and ask child to use these props to construct itself and return us object back
+
+But lets consider opposite case => we should be able to inform parent
+=> let say we want to remove all options => we should make options array empty and options array is inside the IndecisionApp class => removeAll function should be inside Indecision app
+=> Now we have removeAll button inside Options class => when button is clicked => we must call function in parent class i.e. removeAll function in IndecisionApp class
+this example may not seem clear BUT in general, this type of situation always occurs i.e. in parent class you have used different components as its child => now there are some things associated with state of this parent class => Now there can be situation in which any button inside any child clicked should change the state of parent class
+=> To do this commiunication from child to parent => 
+
+1) Make you function in parent class and use setState function to change the state => since state of same class is changed, you can do it 
+2) Now earlier we sent props as attributes to childs => this time also we will send function reference to child as attributes => we are actually sendign child a "means" through which it can communicate to us => once it is received by child,it will talk from child to parent thru this 
+3) Now take this function in the incoming props => first lets remove handleRemoveAll() from our child class i.e. Options class and also constrcutr bcoz we added it for this only 
+4) To access use..this.props.handleDeletion for onClick 
+5) Now since handleDeleteOptions is usig this.setState inside it and we kknow that "this" inside handleDeleteOptions is not the current object itself but is window ref 
+=> We must bind it => eiether while callinf this function, attach .bind(scope) OR inside constructor bind scope to this function => Note that we could not have used first bcoz we are calling handleDeleteOptions from Options class and we need "this" of Indecision app
+
+
+Now implementing the addOption function 
+=> since options will get changed => it is state of Indecision appp => male function inside indecion to handle this
+=> make a function in Indecision app and then bind it because we are going to use setState function by usinf this reference inside it
+Now send this function to component class by giving attribute inside <child> tag which you used inside the parent class
+=> Now we can access this method insdie the AddOption class 
+=> Now we wont remove the old AddOption method inside AddOption class BCOZ it contains the e.preventDfault inside it as well 
+=> what we can do is => let this thing work like before using the old addOption function and then inside AddOption function, after preverntDefault is done, then call the addOption function of our parent class using thia.prop.addOption 
+=>  Now since we are using "this" inside class function, we must bind it => make constructor inside AddOption class and bind this function 
+inside addOption of parent class, lets add the option => we could do prevState.options.push(option) BUT dont bcoz we dont want to modify the prev state directly 
+=> we should instead get the prev state and then create new state and return it => using concat for this 
+
+Add some error handling and validation inside the parent addOptions => if error => retuen the error back to the caller i.e. to the AddOption class bcoz error is specific to form and it should handle it 
+=> on receiving the error, since it is also one kind of a state for the AddOptionc class, make state for error inside it 
+=> use setState to return the rendering of error and add error inside div if render() function where it will show the error 
