@@ -220,3 +220,5 @@ Now we are going to learn about the stateless function components => they dont h
 => to receive these props, since we cant use " this" inside a function, we receive them as first parameter inside the function 
 
 Advantages of using these functions => faster since not a class extending React.Component, neat, easy testing 
+
+Now waht if some prop is being used but it was not passed by the parent => we can use default props => Header.defaultProps = {};
