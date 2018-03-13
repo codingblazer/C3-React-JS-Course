@@ -244,3 +244,10 @@ Now lets create a function for this => handleDeleteOption => bind this function 
 
 But this will create a problem, why ?? because, onclick = {handleDeleteOption} => actually what happens is that when onclick event happens, the callback given inside brakcets gets called and event e object is passed as first arg=> here if we write this, that function will be called with e as argument but this function needs "option" as arg
 => create arrow callback which will get called when click event happens and will recieve e object...from inside of this callback then, call the handleDeleteOption function with option as argument passed 
+
+Lets see lifecylce => statelesss dont havce any lifecyle which is one of the reason why they are so fast 
+For class based => componentDidMount when component is created and mounted in the website 
+componentDidUpdate when the component is updated like when state changes => it receives 2 args => prevProps and prevState
+componentWillUnMount => when compnent goes away
+
+within these 3, there are more lifecycle methodds => search on google 
