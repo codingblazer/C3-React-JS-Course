@@ -225,3 +225,22 @@ Now waht if some prop is being used but it was not passed by the parent => we ca
 
 N0w we have added a chrome extension of react dev tools => inside chrome dev tools, react tab will show up => you can see the finally rendered html using react in form of components
 Also you can select any component in this tab and then open console tab => inside it write $r to print everyrhing about the compnent you selected 
+
+Now making some simplification using arrow functions wherver we are retuningn object 
+
+Now lets make a button for each option that can remove that particulat option 
+=> Now lets see how to structure your components => If you see all the functions are inside Indecision class => always make top level class to handle the query 
+=> the AddOption is only component which has some function of its own => in that also it is finally calling function of indecision app class 
+
+Now lets create a function for this => handleDeleteOption => bind this function as well 
+=> now option compoentn must also contain a button of removing that option with it => add button inside render of option element
+=> now for these button, if the button is clicked, handleDeleteOption should execute 
+=>but it is present inside the indecision class => how to call this outside function for onclick of button 
+=> 1) export handleDeleteOption function by making new prop key and its value as function for <options> tag. Since option tag is not present directly, we cant export this function directly to it
+2) Now imoort the function we exported above inside definition of Options componetn => this.prop.handleDeleteOption
+3) Now again export this function to the option class => To export, like earlier we will create a key inside <option> tag and it value will be this function i.e. this.prop.handleDeleteOption 
+4) Now again inside option componemt class, import this function and for onclick call it 
+
+
+But this will create a problem, why ?? because, onclick = {handleDeleteOption} => actually what happens is that when onclick event happens, the callback given inside brakcets gets called and event e object is passed as first arg=> here if we write this, that function will be called with e as argument but this function needs "option" as arg
+=> create arrow callback which will get called when click event happens and will recieve e object...from inside of this callback then, call the handleDeleteOption function with option as argument passed 
