@@ -222,3 +222,6 @@ Now we are going to learn about the stateless function components => they dont h
 Advantages of using these functions => faster since not a class extending React.Component, neat, easy testing 
 
 Now waht if some prop is being used but it was not passed by the parent => we can use default props => Header.defaultProps = {};
+
+N0w we have added a chrome extension of react dev tools => inside chrome dev tools, react tab will show up => you can see the finally rendered html using react in form of components
+Also you can select any component in this tab and then open console tab => inside it write $r to print everyrhing about the compnent you selected 
