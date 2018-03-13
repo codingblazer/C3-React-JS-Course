@@ -251,3 +251,27 @@ componentDidUpdate when the component is updated like when state changes => it r
 componentWillUnMount => when compnent goes away
 
 within these 3, there are more lifecycle methodds => search on google 
+
+let study about the localStorage of browser => it is global object and available to store data in form of key value paris => both are strings => if you give number, it will autp convert to string 
+=> this local storage persist between refreshes also
+=> localStorage.setItem('age','my');
+.getItem('age');
+.removeItem('age');
+.clear() => clear all localStorage data 
+
+Json = string representation of object in javascript language 
+=> JSON.stringify(obj) => will return json for object 
+=> JSON.parse(string for obj i.e. json value) => will return a object 
+we can use json to convert array obj to string and then localStorage to store that array object 
+=> we will do all the fetching of data inside componentDidMount and all the saving of data inside componentDidUpdate bcoz everytime componentDidUpdate, the options array is changed and we need to update this changed array in localStorage
+=> The componentDidUpdate method is called even if there is no change i.e. if you click remove all button => the handleDeleteOptions will be called => now even if the array is already empty, it will again set array to [empty arr] => componentDidUpdate will be called 
+=> we need to chekc using "if", if the array was actually changed => if yes, then only update the localStorage else not required 
+
+=> to check if arr is changed => just compare their length 
+
+Now inside componentDidMount, we will fetch the data from local storage (that user might have entered last time) and set state to that array 
+=> if prev array is empty => then set state to empty array 
+=> this function acts like init()
+
+and inside componentDidUpdate which is called after every change => check for valid change and then store the new data in localStorage
+
