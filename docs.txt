@@ -342,4 +342,17 @@ Also install webpack cli => yarn add webpack-cli
 
      But we havent givent he presets that are required by the babel => for that we have to setup a babel config file => call it .babaelrc and define the presets inside it in json format 
 
-     Now like we said earlier, there should be one component per file 
+     Now like we said earlier, there should be one component per file => create components folder inside src => each component is named in upper camel case with filename same as component name 
+     => src has 3 type : playground dont bother 2) app.js main js file which will be converted by webpack and contain component from component folder 3) component folder containing all the Components
+
+     Now create compoentns like these => for AddOption create component js file => since it used react => write 3rd party import for react (no need of react dom as rendering is not done here, it is done in main app.js )
+     Also using default export, eport the complete class 
+     Now inside the app.js import the above exported class and verything will  work as before 
+
+
+     Same thing has to be done if it is stateless component => In that case if you want to export as default => DONT USE export default keywork before function expression i.e. bcoz it doesn't work with function variable named expression 
+     => we have to remvoe the varibale and in chrom react dev tools, since no veriable name is present, for them, ]<Unknown key will be shown > => to solve this,dont use export default inline BUT at the end separately as done 
+
+     Now if yuo see, the option component is not needed by app.js...it is needed by the options => import for option mus tbe in options.js component 
+
+      
