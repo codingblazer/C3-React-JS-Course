@@ -341,3 +341,5 @@ Also install webpack cli => yarn add webpack-cli
      2)  test => which files to run this loader on, a regular expression for that   3) exclude => the files to exclude 
 
      But we havent givent he presets that are required by the babel => for that we have to setup a babel config file => call it .babaelrc and define the presets inside it in json format 
+
+     Now like we said earlier, there should be one component per file 
