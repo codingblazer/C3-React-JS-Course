@@ -374,3 +374,15 @@ Also install webpack cli => yarn add webpack-cli
      => we can delete bundle.js and it will still work on running the server + it wont create the bundle.js in our project 
      => if we ever need that bundle.js file, we can run build command individuyaly and it will generate bundle file 
      
+     Now we will add a plugin of babel => yarn add babel-plugin-transform-class-properties
+     => this plugin helps us shorten the class syntax => we were creating constructor, binding of functions inside constructor and many more things which can be simplfies by using this plugin and babel will convert this extended js into normal js for us 
+     Now inside the .babaelrc, add this plugin 
+
+     Now what things can be changed => 1) whernver we need to make class property, we were making it inside contrsutor like : this.newprop = 'cwec'
+     => now instead, dont create a constructor...like in java, create prop as newprop = 'cwc'
+     => earlier we were defining state inside constructot like this.state = {} => just instead so it outside the constructor like we do in java => state = {}
+
+     2) Earlier we were binding the class functions inside the constructor => this was done bcoz when we assign the reference to this class function in some variable, the context "this" gets lost => "this" inside these function no more point to the class 
+     => instead, use arrow function => since "this" inside arrow function always equals to their parent and we know that this class function has parent as class => even if we give reference to this function, whenver we call it, "this" inside it will refer to parent i.e. class/object 
+
+=> we have done this for every component => you can see the diference between old and new syantax  
