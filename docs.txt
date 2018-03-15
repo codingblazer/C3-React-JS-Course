@@ -386,3 +386,41 @@ Also install webpack cli => yarn add webpack-cli
      => instead, use arrow function => since "this" inside arrow function always equals to their parent and we know that this class function has parent as class => even if we give reference to this function, whenver we call it, "this" inside it will refer to parent i.e. class/object 
 
 => we have done this for every component => you can see the diference between old and new syantax  
+
+Now lets say we have <header> and <footer> components and we need a placeholder between them where we can change layouts dynamixally since it is single page app 
+=> 1st way ReactDom.render(<IndecisionApp middle="layout"/> => use props => inside Indecision them, take this middle layout and put them between header and footer 
+=> 2nd way => children props => are present inbuilt => ReactDom.render(<Indecision>
+<p></p>
+...put anything you want between indecision as its children dynamicallly
+</Indecision>) 
+
+=> now inside indecison render, you can access this children part as props.children
+
+...............................................................................
+
+Now we will use 3rd party component for dialog => react modal => search on google 
+=> yarn add react-modal 
+=> create a new component file => OptionModal.js and make imports (see imports for 3rd part modules from their docs online ) 
+=> create a arrow function i.e. stateless component for model and export it 
+Here we are returning JSX => we will be using the modal syntax => you can see from the docs 
+=> import this component inside IndecisoinApp.js 
+=> Inside the render of Indecision component, put this imported Modal Component
+=> Now modal has to be shown/not => that has to be done in response to some event => But it is state of modal 
+=> since the topmost level should handle all the data i.e. Indecision App component => make a state = selectedOption 
+Just look at the handlePick function where we are generating random option from the list => this function is fired when "ehat should i do button is clicked"
+
+
+
+Now when user clicks the What should i do button => 
+=> Inside handlePick you can see that we will pick any random option from the list and show that in the model 
+=> we should pass the random option to modal somehow so it can show it inside it 
+Note that state = random option => initially we have made it undefined 
+=> Inside render where OptionModal tag is used, we must take the current state value and pass it as prop so that OptionModal can accordingly set itself visible/not i.e. if undefined => it means that there are no option => no point showiunf modal => we wont show else show 
+=> There is attribute for MOdal tag in doc of it using which it can be hidden/shown => set that incming prop value as => we have done !!selectedOption => it will convert into boolean true if any option comes, else if it is undefined then it turns false i.e. dont show 
+
+Also next we are showing the option that we recieved inside the modal 
+Now create a button inside the modal "ok" which will be used to dismiss this modal 
+=> also create a event handler for this button inside indecision app and then pass its reference down and down till the modal component so that it can call it with button's onlicck => handleClearOption handler 
+also set the onRequestClose property of modal to this handler bcoz this property call the specified function when modal is closed by escape key or abruptly 
+
+Note : At many places we have used arrow function with return => but we can use them without return => make those modification as well 
