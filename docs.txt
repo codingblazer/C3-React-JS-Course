@@ -355,4 +355,9 @@ Also install webpack cli => yarn add webpack-cli
 
      Now if yuo see, the option component is not needed by app.js...it is needed by the options => import for option mus tbe in options.js component 
 
-      
+    Let say that you get a error => when you visit the browser console it will show you the line where it occured but that line will be in bundle.js => it is very difficult to know from where it was bundled => we use source maps for that
+    => inside config file, we need to add devtool : see that tool  
+    => now if error occur => we will find exact file where it occured 
+    => Note that if you make changes to coinfig file, watch script wont run => run yarn run build again 
+
+    
