@@ -360,4 +360,17 @@ Also install webpack cli => yarn add webpack-cli
     => now if error occur => we will find exact file where it occured 
     => Note that if you make changes to coinfig file, watch script wont run => run yarn run build again 
 
-    
+    Next we will install webpack dev server => it is similar to live server but offers some features that makes working with webpack easier 
+    => yarn add webpack-dev-server
+    Now inside webpack config file, we need to tell that which folder will this serve => like for live server we specified public folder inside package.json in script => add deverver property inside the webpack config file 
+     
+     Now lets modify some scripts => inside package.json 
+     => we dont need babel script now => remove it 
+     => Now when we run webpack server, it automatiacally runs the webpack command i.e. building of biundle.js is done automatically => we dont need build script too BUT we will need it during production, so dont remove now 
+     => add script for running webpack server => this script alone will run server like a live server + it will run build command to generate bundle.js 
+
+     Advantage of webpack server => 1) need just one scriopt now and it watches automatically too
+     2) it generated bundle.js in its own memory => it does not create bundle.js physical file in our project => this saves time for writing this file and other loading => makes server fast too + no need of having extra file 
+     => we can delete bundle.js and it will still work on running the server + it wont create the bundle.js in our project 
+     => if we ever need that bundle.js file, we can run build command individuyaly and it will generate bundle file 
+     
