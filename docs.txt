@@ -437,3 +437,9 @@ inside src create a syles folder and create styles.css file => add some style to
 Now we are not going to use css i.e. we will be using the sass langauge => visit its website
 using webpack we will then convert this styling language to equal regular css 
 sass vs scss => both are same, just sass dont use semicolons and curly braces like we did in css BUT scss does use them like css 
+
+Now we have converted everything for css to scss liek file extensions etc 
+=> now for scss we need 2 things : 1) loader to load scss file like for babel we did sass-loader 
+2) loader to convert the scss file into regular css => node-sass
+
+Now add this sass-loader to config file => behind the scenes, webpack will use node-sass to convert this to css 
