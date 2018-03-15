@@ -275,3 +275,49 @@ Now inside componentDidMount, we will fetch the data from local storage (that us
 
 and inside componentDidUpdate which is called after every change => check for valid change and then store the new data in localStorage
 
+Now lets study about webpack => it clubs all js files into one single file => we will put all the component in their separate files i.e. in their own space => Now inside one single js file we can take anything from component files 
+=> actually we can communicate between js files using webpack => using this communication, we can grab any function or variable from other js file => using this we create just one single file which will in turn take things from compnent js files 
+=> also we can similarly take anything from the 3rd party modules 
+
+So in webpack file strcuture will be like this :
+1) /public : will only contain single main js file => bundle.js
+2) /src => will contain single js files like component js files 
+3) /node_modules : will contain all the 3rd party js files 
+=> webpack bundle.js also runs bable on its own => no need to run it yourself 
+=> also  webpack compresses the js file 
+=> it created scalability because to add any new compoennet we just create new single js compoennt file and use it inside bundle.js => earlier in each js file, wherver it was needed, we would have created that compoennt and also it would have been difficult to debug 
+
+ it is bad to have global dependecies i.e. dont install thigns globally for example : babel cli and live script were installed globally bcoz => they are not added inside package,json and thus people cant know that they are needed for this project 
+ also person wont be able to know the version that is needed for these + we have to run these in terminal again and again 
+
+ => we will remove them => yarn global remove babel-cli live-server
+ => we installed them locally and then inside package.jspn we have added scripts to run them with their shortcut syntax in the terminal 
+ now install webpack from terminal => yarn add webpack and then add sceipt for that alspo 
+
+ So script for webpack is just webpack --watch=> the watch helps in running it again and again
+ => webpack needs a cinfig file to run => create config file => here we define 2 things => entry => input and output => absolute path of output and filename of it => we generally name it bundle.js and we used path lib for absolute path => note that __dirname gives the path of the project on any OS
+Also install webpack cli => yarn add webpack-cli
+ change in file strcuture => move app.js to playgrund => create new app.js in src folder and write single log statement as we are just testing it now 
+ Now  create webpack file as told above in root of folder 
+ => on runnign yarn run build (script fro webpack) => it will buiuld the project and create output in public folder by taking input from src/app.js which contaons log 
+ Now delete the script folder as now we will always have single js file => bundle.js 
+ Also in index.html, remove all script tags like react react dom etc => just include this bundle.js as dependency in index.html in script tag 
+ => project strcuture is likee this config+ package.json file in root and 2 folders - src containing app.js as input and playground folder AND public folder containing index.html and bundle.js which is converted single js file of all js files in src folder 
+
+ Now lets learn ES6 import and export which will be useful in breaking compoennts and communication 
+ =>  
+ =>Why cant we access everything from other files => if global scope for all then app could crash due to conflicts  => we have to export the functions etc
+ => 2 types of exports => default and named => export {} =>  and now for import give name of this function also using from 
+  these were named exports => importing and ecporting by name => in both import and export same name should be used for them 
+   OR 
+   you can put export keywork before function expression => it cant be done for variables, just for function expression => import for this will be same  
+
+   Default exports => use "as default" while exporting => we can have only one default  
+   see how we ipmported a deafulat export => they are not named => we can import them by anyname => like we have done usign anythign => since there is only one deafult => that name will be used for default 
+    OR 
+    for usign it inline => use export default keywork before function expression => we cant put is before variable
+
+    See person.js which also have exports => though just for playground 
+
+    Note : You faced error in webpack but it was bcoz your config file was not in root => must be in root 
+    Error : ERROR in Entry module not found: Error: Can't resolve './src' i
