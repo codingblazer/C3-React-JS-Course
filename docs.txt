@@ -424,3 +424,16 @@ Now create a button inside the modal "ok" which will be used to dismiss this mod
 also set the onRequestClose property of modal to this handler bcoz this property call the specified function when modal is closed by escape key or abruptly 
 
 Note : At many places we have used arrow function with return => but we can use them without return => make those modification as well 
+
+lets look at the styling now : 
+
+inside src create a syles folder and create styles.css file => add some style to it 
+=> Now we will use webpack to load these styles => for that we need to install loaders => css-loader and style-loader 
+=> inside the config file of webpack => we will add another rule for css => test will be all the css file 
+=> But now since we have 2 loaders, "use" key is used to define the array of loaders 
+=> install the loader as => yarn add css-loader style-loader 
+=> next write a import statement in app.js to load the styles in it i.e styles.css file => that's ol 
+
+Now we are not going to use css i.e. we will be using the sass langauge => visit its website
+using webpack we will then convert this styling language to equal regular css 
+sass vs scss => both are same, just sass dont use semicolons and curly braces like we did in css BUT scss does use them like css 
