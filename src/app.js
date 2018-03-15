@@ -1,13 +1,5 @@
-// import './utils.js'; //simple import 
-// import subtract, { square, add } from './utils.js'; 
-//above subtract is default import and others are named import 
-
-// console.log('app.js is running');
-// console.log(square(4));
-// console.log(add(100, 23));
-// console.log(subtract(100, 20));
-
-import isSenior, { isAdult, canDrink } from './person.js';
-console.log(isAdult(18));
-console.log(canDrink(20));
-console.log(isSenior(65));
+// install -> import -> use
+import React from 'react';
+import ReactDOM from 'react-dom';
+const template = <p>THIS IS JSX FROM WEBPACK</p>;
+ReactDOM.render(template, document.getElementById('app'));

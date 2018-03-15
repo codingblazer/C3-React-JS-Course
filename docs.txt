@@ -321,3 +321,23 @@ Also install webpack cli => yarn add webpack-cli
 
     Note : You faced error in webpack but it was bcoz your config file was not in root => must be in root 
     Error : ERROR in Entry module not found: Error: Can't resolve './src' i
+
+    Now we will see how to import from 3rd party modules => lets do it for validator package 
+     1) Install using yarn to add them in package.json and they get installed in node_modules folder
+     2)_ import them by their correct name => import vlidator from 'validator'
+     3) use simply use any function 
+
+   now do it for rect and react dom bcoz earlier we added those in script tag in html 
+    Now lets learna bout webpack loaders => loader are the tool in webpack which loads the files and convert them to any medium like running through babel at time of loading or cnverting them to scss at time of loading 
+
+    Now install the babel core => this is different from the babel cli in a way that this allows the tools like webpack to use babel internally 
+    => yarn add babel-core 
+    =>  yarn add babel-loader => this tool teaches webpack about how to run babel 
+     
+     Next insdie the config file of webpack we will set up thigns for the loader => done using module object 
+     => you define a array of rules like rule to convert scsss to css etc 
+
+     => make a rule array inside module object => each rule take 3 things : the loader -> in case of babel it is babel-loader we just installed => specify that 
+     2)  test => which files to run this loader on, a regular expression for that   3) exclude => the files to exclude 
+
+     But we havent givent he presets that are required by the babel => for that we have to setup a babel config file => call it .babaelrc and define the presets inside it in json format 
