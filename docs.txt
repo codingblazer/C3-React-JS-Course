@@ -471,3 +471,18 @@ create a style for title and subtile of header also and apply their class
 Now you would have seen that header is having some spaces at boundary which is bcoz of browser default styles and is different for every browser => reset them => for this we use library that does the work for us 
 yarn add normalize.css => Now import this css file in app.js (bcoz untimately every style goes to style.scss and that goes to app.js)
 But this file wont work bcoz webpack does not know how to load css files (remember that in config, we changed css to scss => it only knows how to load scss) => in webpack config make that change 
+
+Now we will create setting scss file which will contain all the dimensions like we used to do in android 
+=> this file is imported in style.scss as it is top heirarchy of all styles => Put import of this above ll imports bcoz this contain variables which will be used in other imported files and thus should come first 
+
+=> we have put all colors in this file, all dimensions. Some things like font weight maybe kept that way bcoz they are not used that frequently 
+
+Now inside component folder create container partial => this is used to bring everything in the center 
+=> include this file in style.scss 
+=> inside this file, define max width => this container will contain all the content => if we dont set max width, it will take 100% width and things will remain as it is => even if we give margin, it wont add them as it is having 100% browser space 
+=> next think it like 600 px movable box containing content => if browser size is more than this, this box should be in center and remaining broser space should be used as margin => did that using auto 
+=> add some padding as well bcoz currently if small browser i.e. less than 600 px, then it box will take all the space => content will stick to left => padding will give some space on left in this case 
+=> Now apply this inside the header component => create a new div bcoz if we apply on current div, then blue bg will also reduce due to margin and padding but we want it to cover all broswer window 
+=> also apply this to Indecision app i.e. apply container in body content bcoz we also want it to be in center 
+
+add blue background for the body  
