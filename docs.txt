@@ -486,3 +486,20 @@ Now inside component folder create container partial => this is used to bring ev
 => also apply this to Indecision app i.e. apply container in body content bcoz we also want it to be in center 
 
 add blue background for the body  
+
+Now what should i do button is styled => create button.scss and inport it inside style.scss 
+Now apply this class on button what dhould i do 
+inside button.scss we have used darken function which is sass function => there are similar functions available 
+
+also we have defined button styles for disabled state : pseudo class i.e. :disabled 
+
+Now if you see cursor, it is not clickable symbol => inside base, we have defined that for buttions, cursor should be pointer => targetted all buttons here (not created class) => since it is general i.e. apply to all buttons, we have put this inside base 
+
+inside button.scss define style for regular buttons like add remve 
+and apply this class to small button everywhere
+
+But if you see then remove button and remove all are slightly different => thus we will override the above button style and modify them as little 
+=> this is done using modifier => for naming, use the class you want to override followed by 2 hiphens and name of the new class => like button--link 
+To apply it, use it like : <className="button button-link">
+
+=> use it wherever applicable 
