@@ -503,3 +503,31 @@ But if you see then remove button and remove all are slightly different => thus 
 To apply it, use it like : <className="button button-link">
 
 => use it wherever applicable 
+
+Now we will style the listbox => lets call it widget => we have to add a heading on this box "Your Options" which is not present curently 
+=> inside Options component, add it => now put this along with the Remove all button inside single div and we want them together 
+=> Now create a style partial widget => import this in style.scss 
+Inside this widget has different parts and we will create classes for them - 
+1) widget header cotnaining "Your options" and remove all => apply it on div containing these 2 => display type is flex meaning that horizontal stacking /
+the justify content property will make all the space between these 2 to divide equally between them 
+
+2) widget title which is actually part of widget header only i.e. "your options" part BUt we dont want to use nested => create separate for this 
+3) widget => the outside box that you see containing everything 
+apply it on Indecision app 
+4) message => for "please add an optuon to get started" => this section 
+
+Now we will try to style the option individually => create option.scss and import it 
+inside this file, add flex to make remove and text horizontal stack and justify 
+
+Now we want to have the number before option showing up => Inside Options.js we are using map to go thru all the options => we also get a index as 2nd argument in map => send this index+1 as prop to Option component itself 
+=> Inside Option component, take this above passed index and set it as text of that option 
+
+cretae class for text inside the option
+
+Next we will create new file for styles of add button and textbox 
+=> create addOption partila dn import it => 
+1) This may show error message => create class for it 
+2) For input box => we do want to flex textbox and add button but the textbox must take all the empty space 
+=> dont give justify, just give flex and then for input, apply class to it with flex grow which makes the applied component to grow and takw all the space 
+
+apply these at their places 
