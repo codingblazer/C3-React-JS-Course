@@ -443,3 +443,27 @@ Now we have converted everything for css to scss liek file extensions etc
 2) loader to convert the scss file into regular css => node-sass
 
 Now add this sass-loader to config file => behind the scenes, webpack will use node-sass to convert this to css 
+
+We can also break styles in multiple files and then use them using imports feature of scss 
+=> Create a base folder which will contain styles which are global to app 
+=> next create _base which will contain partials => _ denotes that it is partial => it will be used in some other main style file => the files name that don't start with _ are the main files i.e. which serves as the entry point for styles For ex- styles.scss is main file 
+Now we have created a font family inside this partial => Now imported this file in styles.scss 
+
+We will use rem unit for dimension instead of pixel =>  1 rem = 16 pixels 
+But dealing with it can be diffucult since it is 16 base 
+=> trick for dealing => create html tag and apply font-size to be 62.5% => every rem size will now become base 10 
+=> 62.5% of 16 = 10 that's why => if we want 22 pixel, now we can do 2.2 rem (base 10)
+
+next create a folder components containing all the scss partials for individual components 
+then create a header partial and import it inside style.scss i.e. the main file bcoz partial file is not applied anywhere yet..it just exist => by importing into main file, it is applied 
+
+Now lets wrote scss inside this header partial => create a class called header and inside it defioned css rules 
+Now apply this class somewhere => inside header component jsx, add this class to div (remember that in jsx, it is not class but className)
+
+Note that inside header styles, since it is scss, we can create nested rules => like here, we have nested h1 inside header class => means that for every h1 inside header class apply these /
+But avoid this => commented out 
+
+Note that we are following BEM naming convention => Block element modifier 
+=> header__title => header is block and title is elemen inside it 
+
+create a style for title and subtile of header also and apply their class 
