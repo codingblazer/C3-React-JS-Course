@@ -467,3 +467,7 @@ Note that we are following BEM naming convention => Block element modifier
 => header__title => header is block and title is elemen inside it 
 
 create a style for title and subtile of header also and apply their class 
+
+Now you would have seen that header is having some spaces at boundary which is bcoz of browser default styles and is different for every browser => reset them => for this we use library that does the work for us 
+yarn add normalize.css => Now import this css file in app.js (bcoz untimately every style goes to style.scss and that goes to app.js)
+But this file wont work bcoz webpack does not know how to load css files (remember that in config, we changed css to scss => it only knows how to load scss) => in webpack config make that change 
